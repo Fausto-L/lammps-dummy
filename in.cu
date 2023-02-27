@@ -9,7 +9,7 @@ neighbor 2.0 bin #?截断半径
 
 # modeling of cu crystal cell
 lattice fcc 3.61
-region box block 0 5 0 5 0 5 units  # 5 lattices ;+box 5Am
+region box block 0 5 0 5 0 5  # 5 lattices ;+box 5Am
 create_box 1 box
 create_atoms 1 box
 
@@ -22,7 +22,7 @@ pair_style eam
 pair_coeff * * Cu_u3.eam
 
 # temp initialization 
-velocity all 300 90985
+velocity all create 300 90985
 
 #* 含多种原子，防止原子重叠，可以能量最小化
 
