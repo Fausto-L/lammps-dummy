@@ -1,0 +1,38 @@
+# input file to generate a silica glass
+units real
+dimension 3
+processors * * * 
+boundary p p p
+
+# read data
+atom_style charge
+read_data SiO2.dat
+
+# potential
+include pot.mod
+
+# outputs
+thermo 100
+thermo_style custom step
+thermo_style one args
+dump ID group-ID atom N file args
+
+# initial minimisation
+minimize 1.0e-10 1.0e-10 10000 10000 
+
+# initial mixing
+fix 1 all nvt temp 5000 5000 100
+run 200000
+unfix 1
+
+fix 1 all npt temp 5000 5000 100 iso 0 0 1000
+run 100000
+unfix 1
+
+#colling at 1 K/ps
+fix 1 all npt temp 5000 300 100 iso 0 0 1000
+run 4700000
+unfix 1
+
+#final relaxation
+fix 1 group-ID style args

@@ -17,7 +17,7 @@ create_atoms 1 box
 thermo 100
 thermo_style custom step temp pe ke
 
-# potential function(势函数、立场)
+# potential function(势函数、力场)
 pair_style eam
 pair_coeff * * Cu_u3.eam
 
