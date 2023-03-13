@@ -1,0 +1,63 @@
+# Simulation of SiO2 on Si
+# Variables 
+variable            tstp equal 0.001    # timestep 1fs=0.001ps
+variable            relaxstep equal 50000   # 弛豫时间,50ps
+variable            relaxtemp equal 300 # 弛豫温度K
+variable            relaxdump equal 2000    # 弛豫可视化文件输出频率
+
+variable            deep equal 18   # 插入深度A，记得加上间距10+8
+variable            vz equal -0.1   # 表示0.1A/Ps，插入速度,千万要能被整除
+variable            runpin equal abs(${deep}/${vz}/${tstp})     # 表示插入18A
+variable            dis equal 1000  #运行距离
+variable            vx equal 0.1    #表示0.1A/Ps，运行速度
+variable            runpin2 equal abs(${dis}/${vx}/${tstp})     #继续运行
+
+# parameters 
+units metal
+dimension	2
+boundary	p p p
+atom_style	atomic
+
+neighbor	0.3 bin         #?邻近原子列表参数
+neigh_modify	delay 5     #?模拟开始后延迟5个补偿再重建邻居列表
+
+read_data nanocluster.data  #SiO2 sphere
+
+# force field
+pair_style tersoff
+#pair_coeff * * SiO.1997.vashishta Si O
+
+
+#固定层、恒温层和牛顿层设定
+region         bot block INF INF INF INF INF 5
+group          bot region bot
+region         mid block INF INF INF INF 5 30
+group          mid region mid
+region         up block INF INF INF INF 30 60
+group          up region up
+region         all union 3 bot mid up
+group          all region all
+
+# abrasive particle
+region ball sphere 
+
+
+# Run
+
+timestep	0.0025
+thermo		1000
+thermo_modify	temp new
+
+dump		1 all atom 500 dump.friction
+
+dump		2 all image 500 image.*.jpg type type &
+		zoom 1.6 adiam 1.5
+dump_modify	2 pad 5
+
+dump		3 all movie 500 movie.mpg type type &
+		zoom 1.6 adiam 1.5
+dump_modify	3 pad 5
+
+dump 4 all atom 500 friction.xyz
+
+run		20000

@@ -14,5 +14,4 @@
 
 > lmp -in in.cu
 
-
 来自b站视频：[lammps新手入门教程：Cu融化in文件编写](https://www.bilibili.com/video/BV1uM4y1g78Q/?spm_id_from=333.337.search-card.all.click&vd_source=0f0528ad0407e5f95f4a680364877079)

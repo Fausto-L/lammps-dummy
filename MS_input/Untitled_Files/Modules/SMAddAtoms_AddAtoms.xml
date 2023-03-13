@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="latin1"?>
+<EXTENSION VERSION="20.1">
+<LOGICS>
+<LOGICITEM NAME="AddAtomsLogic">
+	<STATE NAME="AddAtomsLogicState" VERSION="20.1">
+	<PROPERTIES>
+	<PROPERTY NAME="AnisotropicTemperatureFactor">
+	<VALUE>
+	<ITEM>0.</ITEM>
+	<ITEM>0.</ITEM>
+	<ITEM>0.</ITEM>
+	<ITEM>0.</ITEM>
+	<ITEM>0.</ITEM>
+	<ITEM>0.</ITEM>
+	</VALUE>
+	</PROPERTY>
+	<PROPERTY NAME="Coordinate">
+	<VALUE>
+	<ITEM>0.41409999</ITEM>
+	<ITEM>0.26809999</ITEM>
+	<ITEM>0.78549999</ITEM>
+	</VALUE>
+	</PROPERTY>
+	<PROPERTY NAME="Element">
+	<VALUE>O</VALUE>
+	</PROPERTY>
+	<PROPERTY NAME="Name">
+	<VALUE>O</VALUE>
+	</PROPERTY>
+	</PROPERTIES>
+	</STATE>
+</LOGICITEM>
+</LOGICS>
+</EXTENSION>

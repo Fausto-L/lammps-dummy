@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="latin1"?>
+<EXTENSION VERSION="20.1">
+<LOGICS>
+<LOGICITEM NAME="NanoTubeBuilderLogic">
+	<STATE NAME="Nano-Tube Builder State" VERSION="20.1">
+	<PROPERTIES>
+	<PROPERTY NAME="Cluster_BasicUnitPathName">
+	<VALUE>D:\git\lammps-dummy\MS_input\Untitled_Files\Documents\SiO2 2.xsd</VALUE>
+	</PROPERTY>
+	<PROPERTY NAME="Cluster_Shape">
+	<VALUE>2</VALUE>
+	</PROPERTY>
+	<PROPERTY NAME="Cluster_Sphere_Radius">
+	<VALUE>20.</VALUE>
+	</PROPERTY>
+	<PROPERTY NAME="Cluster_Is_Capped">
+	<VALUE>false</VALUE>
+	</PROPERTY>
+	</PROPERTIES>
+	</STATE>
+</LOGICITEM>
+</LOGICS>
+</EXTENSION>

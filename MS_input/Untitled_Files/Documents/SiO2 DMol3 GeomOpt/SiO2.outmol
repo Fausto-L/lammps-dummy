@@ -1,0 +1,586 @@
+ 
+     ===============================================================
+     Materials Studio DMol^3 version 2020            
+     compiled on Oct 17 2019 19:55:04
+     ===============================================================
+ 
+     ===============================================================
+     Density Functional Theory Electronic Structure Program
+     Copyright (c) 2019, Dassault Systemes, all rights reserved.
+     Cite work using this program as: 
+     B. Delley, J. Chem. Phys. 92,  508  (1990).
+     B. Delley, J. Chem. Phys. 113, 7756 (2000).
+     DMol^3 is available as part of Materials Studio.
+     ===============================================================
+ 
+ 
+DATE:     Mar 13 13:56:09 2023
+ 
+Job started on host LAPTOP-JQGEQ37G
+
+This run uses    1 processors
+
+Message: License checkout of MS_dmol successful
+Message: License checkout of MS_dsolid successful
+ 
+Basis set is read from file:
+D:\Program Files (x86)\BIOVIA\Materials Studio 20.1 x64 Server\share\Resources\Quantum\DMol3\BASFILE_v3.5
+
+ 
+ no INCOOR file: try ZMAT
+ no ZMAT file: try CAR
+
+Geometry is read from file: SiO2.car                                                                                                                                                                                                                                                        
+
+INCOOR, atomic coordinates in au (for archive):
+______________________________________________________________________>8
+
+$cell vectors
+              9.28498034254350    0.00000000000000    0.00000000000000
+             -4.64249017127175    8.04102885028181    0.00000000000000
+              0.00000000000000    0.00000000000000   10.21434765081535
+$coordinates
+O             2.60025869390670    2.15579978260092    8.02336997767025
+O             6.11787361762178    1.17399019519531    4.61858742802837
+O             5.20933820039705    4.71123887257164    1.21380487649677
+O             0.56684802912529    3.32978997779622    2.19097767314510
+O            -2.04223147736505    5.88522906776695    5.59576022278698
+O             1.47538344635003    6.86703865517256    9.00054277431858
+Si            4.36273372299955    0.00000000000000    6.80956510117348
+Si           -2.18136686244464    3.77823823512243    3.40478254964188
+Si            2.46112330882712    4.26279061524544    0.00000000000000
+$end
+______________________________________________________________________>8
+
+
+N_atoms =    9     N_atom_types =  2
+
+
+INPUT_DMOL keywords (for archive):
+______________________________________________________________________>8
+
+#Warning: no global confinement specs in BASFILE
+                                                                                                                                    <--
+# Task parameters                                                                                                                   <--
+Calculate                     optimize                                                                                              <--
+Opt_energy_convergence        2.0000e-05                                                                                            <--
+Opt_gradient_convergence      4.0000e-03 A                                                                                          <--
+Opt_displacement_convergence  5.0000e-03 A                                                                                          <--
+Opt_iterations                50                                                                                                    <--
+Opt_max_displacement          0.3000 A                                                                                              <--
+Symmetry                      on                                                                                                    <--
+Max_memory                    2048                                                                                                  <--
+File_usage                    smart                                                                                                 <--
+Scf_density_convergence       1.000000e-05                                                                                          <--
+Scf_charge_mixing             2.000000e-01                                                                                          <--
+Scf_diis                      6 pulay                                                                                               <--
+Scf_iterations                50                                                                                                    <--
+                                                                                                                                    <--
+# Electronic parameters                                                                                                             <--
+Spin_polarization             restricted                                                                                            <--
+Charge                        0                                                                                                     <--
+Basis                         dnd                                                                                                   <--
+Pseudopotential               none                                                                                                  <--
+Functional                    pwc                                                                                                   <--
+Harris                        off                                                                                                   <--
+Aux_density                   hexadecapole                                                                                          <--
+Integration_grid              medium                                                                                                <--
+Occupation                    fermi                                                                                                 <--
+Cutoff_Global                 4.0000 angstrom                                                                                       <--
+                                                                                                                                    <--
+# Kpoint definition file (intervals/offset):                                                                                        <--
+Kpoints                       file     3 3 2 0.0000 0.0000 0.0000                                                                   <--
+SiO2.kpoints                                                                                                                        
+                                                                                                                                    <--
+# Calculated properties                                                                                                             <--
+______________________________________________________________________>8
+
+
+Publications of specific relevance to this calculation:
+
+Density functional:
+ local functional PWC: Perdew Wang: Phys. Rev. B 45, 13244 (1992)
+
+
+ The Generation and Use of Delocalized Internal Coordinates in Geometry optimization; 
+ Baker Kessi Delley: J. Chem. Phys., 105, 192 (1996) 
+ Andzelm Fitzgerald King-Smith: Chem. Phys. Lett., 335, 321 (2001)
+
+Fast Calculation of Electrostatics in Crystals and Large Molecules;
+ Delley: J. Phys. Chem. 100, 6107 (1996)
+ 
+Calculation is Spin_restricted
+ 
+ 
+
+The point group of the crystal is:
+ hexagonal of order  6
+ without inversion symmetry
+
+Note: C3 point group operation found: mesh 3
+
+
+Lattice:
+ translation vector [a0]    1    9.284980343    0.000000000    0.000000000
+ translation vector [a0]    2   -4.642490171    8.041028850    0.000000000
+ translation vector [a0]    3    0.000000000    0.000000000   10.214347651
+Cell volume          762.611 a0^3
+
+** GEOMETRY OPTIMIZATION IN DELOCALIZED COORDINATES **
+
+   Searching for a Minimum
+
+                              Input Coordinates (Angstroms)
+          ----------------------------------------------------------------------
+               ATOM               X                   Y                   Z
+            1    O             1.375998            1.140800            4.245785
+            2    O             3.237439            0.621249            2.444051
+            3    O             2.756663            2.493080            0.642318
+            4    O             0.299963            1.762049            1.159415
+            5    O            -1.080702            3.114329            2.961149
+            6    O             0.780739            3.633880            4.762882
+            7    Si            2.308659            0.000000            3.603467
+            8    Si           -1.154330            1.999358            1.801733
+            9    Si            1.302370            2.255772            0.000000
+          ----------------------------------------------------------------------
+
+  
+
+*** OPTIMIZATION USES DELOCALIZED INTERNALS ***
+
+ The preliminary size of active space is :      24
+ There are :           24  degrees of freedom
+ There are likely:     36  primitive internals
+
+Oxygen       nbas=  1, z=   8, nrfn=  7, rcut=  7.56, e_ref= -0.054750 Ha
+                                  rcore=  0.00  zval=   8.00   8.00
+   n=1  L=0  occ= 2.00 e=     -18.755357Ha      -510.3595eV
+   n=2  L=0  occ= 2.00 e=      -0.869211Ha       -23.6524eV
+   n=2  L=1  occ= 4.00 e=      -0.336158Ha        -9.1473eV
+   n=2  L=0  occ= 0.00 e=      -2.130075Ha       -57.9623eV
+   n=2  L=1  occ= 0.00 e=      -1.593473Ha       -43.3606eV
+   n=3  L=2  occ= 0.00 e=      -2.722219Ha       -74.0754eV
+   n=3  L=2  occ= 0.00 e=      -1.388515Ha       -37.7834eV  eliminated
+Silicon      nbas=  2, z=  14, nrfn=  8, rcut=  7.56, e_ref= -0.039251 Ha
+                                  rcore=  0.00  zval=  14.00  14.00
+   n=1  L=0  occ= 2.00 e=     -65.146863Ha     -1772.7371eV
+   n=2  L=0  occ= 2.00 e=      -5.039578Ha      -137.1339eV
+   n=2  L=1  occ= 6.00 e=      -3.479298Ha       -94.6765eV
+   n=3  L=0  occ= 2.00 e=      -0.373839Ha       -10.1727eV
+   n=3  L=1  occ= 2.00 e=      -0.125161Ha        -3.4058eV
+   n=3  L=0  occ= 0.00 e=      -1.050447Ha       -28.5841eV
+   n=3  L=1  occ= 0.00 e=      -0.758128Ha       -20.6297eV
+   n=3  L=2  occ= 0.00 e=      -1.999965Ha       -54.4218eV
+
+Kpoints mesh:   3   3   2    0  0  0    0  1      18
+
+Parameters for generating k-points:   3   3   2        0.00      0.00      0.00       18
+Total number of symmetry-unique k points:       4
+Total number of symmetry-unique tetrahedra:      10
+
+
+Symmetry orbitals C1                            
+    n  norb    representation
+    1   138        a    
+  total number of valence orbitals:    138
+
+ cell charge=              0.000000   active electron number      90.0
+ (without charge=              90.0 )
+ 
+
+ real array elements, matrices vectors etc:      19.0 MB 
+ integer arrays                           :       1.1 MB 
+ min recommended for all-incl workspace   :      21.1 MB 
+Total memory allocated for arrays         :      45.1 MB 
+Memory for temporary file storage on disk :      16.0 MB
+Total memory allocated                    :      61.1 MB
+Max memory requested                      :    2048.0 MB
+
+            Total Energy           Binding E       Cnvgnce     Time   Iter
+Ef        -1314.563532Ha        -2.7740079Ha      2.48E-01     0.1m      1
+Ef        -1314.296445Ha        -2.5069215Ha      1.18E-01     0.2m      2
+Ef        -1314.223880Ha        -2.4343559Ha      5.20E-02     0.2m      3
+Ef        -1314.218444Ha        -2.4289205Ha      8.23E-03     0.3m      4
+Ef        -1314.218049Ha        -2.4285250Ha      1.65E-03     0.3m      5
+Ef        -1314.218032Ha        -2.4285083Ha      2.56E-04     0.3m      6
+Ef        -1314.218025Ha        -2.4285009Ha      1.47E-04     0.4m      7
+Ef        -1314.218020Ha        -2.4284960Ha      1.23E-05     0.4m      8
+Ef        -1314.218020Ha        -2.4284958Ha      8.39E-06     0.5m      9
+Message: SCF converged
+
+
+Fermi Energy:           -0.174649 Ha     -4.752 eV 
+ 
+ within the k-points mesh accuracy this solid is an insulator or semiconductor
+DFT energy gap:          0.244412 Ha      6.651 eV   indirect (upper limit from sampling with scf k-mesh)
+valence band edge:      -0.296855 Ha     -8.078 eV
+       located at:         0.333  0.000 -0.250  in fractional units of recip
+conduction band edge:   -0.052443 Ha     -1.427 eV
+          located at:      0.000  0.000  0.250
+
+df              ATOMIC  COORDINATES (au)                  DERIVATIVES (au)
+df            x          y          z            x          y          z
+df    O     2.600259   2.155800  -2.190978     0.003859   0.000101   0.002726
+df    O    -3.167107   1.173990   4.618587    -0.002017   0.003292   0.002726
+df    O     0.566848  -3.329790   1.213805    -0.001842  -0.003392   0.002726
+df    O     0.566848   3.329790   2.190978    -0.001842   0.003392  -0.002726
+df    O     2.600259  -2.155800  -4.618587     0.003859  -0.000101  -0.002726
+df    O    -3.167107  -1.173990  -1.213805    -0.002017  -0.003292  -0.002726
+df   Si     4.362734   0.000000  -3.404783     0.000827  -0.000000   0.000000
+df   Si    -2.181367   3.778238   3.404783    -0.000413   0.000716  -0.000000
+df   Si    -2.181367  -3.778238   0.000000    -0.000413  -0.000716   0.000000
+df  binding energy      -2.4284957Ha       -66.08276eV       -1523.935kcal/mol
+
+
+Energy components:
+   Sum of atomic energies =    -1311.7895237Ha
+                  Kinetic =       -5.2268790Ha
+            Electrostatic =        1.4123563Ha
+     Exchange-correlation =        0.9397757Ha
+        Spin polarization =        0.4462512Ha
+       Jellium correction =        0.0018381Ha
+
+            Total Energy           Binding E                   Time   Iter
+Ef        -1314.218019Ha        -2.4284957Ha                   0.6m     10
+ 
+
+** GEOMETRY OPTIMIZATION IN DELOCALIZED COORDINATES **
+
+   Searching for a Minimum
+
+                              Input Coordinates (Angstroms)
+          ----------------------------------------------------------------------
+               ATOM               X                   Y                   Z
+            1    O             1.375998            1.140800            4.245785
+            2    O             3.237439            0.621249            2.444051
+            3    O             2.756663            2.493080            0.642318
+            4    O             0.299963            1.762049            1.159415
+            5    O            -1.080702            3.114329            2.961149
+            6    O             0.780739            3.633880            4.762882
+            7    Si            2.308659            0.000000            3.603467
+            8    Si           -1.154330            1.999358            1.801733
+            9    Si            1.302370            2.255772            0.000000
+          ----------------------------------------------------------------------
+
+ Geometry optimization: predicted energy change is  -0.000472 Ha
+
+ New Cartesian Coordinates Obtained by Inverse Iteration
+ Norm of Displacement of Delocalized Coordinates:   0.054181
+ Norm of Displacement of Cartesian Coordinates:     0.115840
+
+opt==  Cycle       Total Energy   Energy change   Max Gradient   Max Displacement
+opt==         tolerance:.......      0.0000200        0.002117       0.009449
+opt==    1        -1314.2180194      0.0000000        0.003859       0.036257
+
+ 
+                      Step    1                                       <-- DELOC
+                                                                      <-- DELOC
+ +-----------+-----------------+-----------------+------------+-----+ <-- DELOC
+ | Parameter |      value      |    tolerance    |    units   | OK? | <-- DELOC
+ +-----------+-----------------+-----------------+------------+-----+ <-- DELOC
+ |  delta E  |   -0.242850E+01 |    0.200000E-04 |      Ha    | No  | <-- DELOC
+ |  |F|max   |    0.385897E-02 |    0.211671E-02 |      au    | No  | <-- DELOC
+ |  |dR|max  |    0.362567E-01 |    0.944863E-02 |      au    | No  | <-- DELOC
+ +-----------+-----------------+-----------------+------------+-----+ <-- DELOC
+ 
+
+            Total Energy           Binding E       Cnvgnce     Time   Iter
+Ef        -1314.218194Ha        -2.4286706Ha      1.31E-02     0.8m      1
+Ef        -1314.219024Ha        -2.4295001Ha      1.11E-02     0.8m      2
+Ef        -1314.218703Ha        -2.4291790Ha      8.08E-03     0.9m      3
+Ef        -1314.218641Ha        -2.4291169Ha      5.88E-03     0.9m      4
+Ef        -1314.218612Ha        -2.4290881Ha      4.27E-04     0.9m      5
+Ef        -1314.218607Ha        -2.4290831Ha      2.23E-04     1.0m      6
+Ef        -1314.218610Ha        -2.4290864Ha      1.97E-05     1.0m      7
+Ef        -1314.218610Ha        -2.4290867Ha      4.13E-06     1.1m      8
+Message: SCF converged
+
+
+Fermi Energy:           -0.175574 Ha     -4.778 eV 
+ 
+ within the k-points mesh accuracy this solid is an insulator or semiconductor
+DFT energy gap:          0.242988 Ha      6.612 eV   indirect (upper limit from sampling with scf k-mesh)
+valence band edge:      -0.297068 Ha     -8.084 eV
+       located at:         0.333  0.000 -0.250  in fractional units of recip
+conduction band edge:   -0.054080 Ha     -1.472 eV
+          located at:      0.000  0.000  0.250
+
+df              ATOMIC  COORDINATES (au)                  DERIVATIVES (au)
+df            x          y          z            x          y          z
+df    O     2.579363   2.185601  -2.215593     0.002113   0.000563   0.002100
+df    O    -3.182467   1.140993   4.593972    -0.001544   0.001548   0.002100
+df    O     0.603105  -3.326594   1.189190    -0.000568  -0.002111   0.002100
+df    O     0.603105   3.326594   2.215593    -0.000568   0.002111  -0.002100
+df    O     2.579363  -2.185601  -4.593972     0.002113  -0.000563  -0.002100
+df    O    -3.182467  -1.140993  -1.189190    -0.001544  -0.001548  -0.002100
+df   Si     4.338003   0.000000  -3.404783     0.000152   0.000000   0.000000
+df   Si    -2.169002   3.756821   3.404783    -0.000076   0.000131   0.000000
+df   Si    -2.169002  -3.756821   0.000000    -0.000076  -0.000131  -0.000000
+df  binding energy      -2.4290867Ha       -66.09884eV       -1524.305kcal/mol
+
+
+Energy components:
+   Sum of atomic energies =    -1311.7895237Ha
+                  Kinetic =       -5.2637140Ha
+            Electrostatic =        1.4583048Ha
+     Exchange-correlation =        0.9300714Ha
+        Spin polarization =        0.4462512Ha
+       Jellium correction =        0.0018008Ha
+
+            Total Energy           Binding E                   Time   Iter
+Ef        -1314.218610Ha        -2.4290867Ha                   1.2m      9
+ 
+ Evaluating last optimization step: 
+ Predicted energy change =  -0.000472 Ha
+    Actual energy change =  -0.000591 Ha
+ 
+
+** GEOMETRY OPTIMIZATION IN DELOCALIZED COORDINATES **
+
+   Searching for a Minimum
+
+                              Input Coordinates (Angstroms)
+          ----------------------------------------------------------------------
+               ATOM               X                   Y                   Z
+            1    O             1.364940            1.156570            4.232759
+            2    O             3.229311            0.603787            2.431025
+            3    O             2.775849            2.494771            0.629292
+            4    O             0.319149            1.760358            1.172441
+            5    O            -1.091760            3.098559            2.974175
+            6    O             0.772611            3.651342            4.775908
+            7    Si            2.295572            0.000000            3.603467
+            8    Si           -1.147786            1.988024            1.801733
+            9    Si            1.308914            2.267105            0.000000
+          ----------------------------------------------------------------------
+
+ Hessian Updated using BFGS Update
+ Geometry optimization: predicted energy change is  -0.000308 Ha
+
+ New Cartesian Coordinates Obtained by Inverse Iteration
+ Norm of Displacement of Delocalized Coordinates:   0.066460
+ Norm of Displacement of Cartesian Coordinates:     0.113105
+
+       Cycle    Total Energy      Energy change   Max Gradient   Max Displacement
+opt==    2        -1314.2186104     -0.0005910        0.002113       0.031735
+
+ 
+                      Step    2                                       <-- DELOC
+                                                                      <-- DELOC
+ +-----------+-----------------+-----------------+------------+-----+ <-- DELOC
+ | Parameter |      value      |    tolerance    |    units   | OK? | <-- DELOC
+ +-----------+-----------------+-----------------+------------+-----+ <-- DELOC
+ |  delta E  |   -0.590959E-03 |    0.200000E-04 |      Ha    | No  | <-- DELOC
+ |  |F|max   |    0.211261E-02 |    0.211671E-02 |      au    | Yes | <-- DELOC
+ |  |dR|max  |    0.317347E-01 |    0.944863E-02 |      au    | No  | <-- DELOC
+ +-----------+-----------------+-----------------+------------+-----+ <-- DELOC
+ 
+
+            Total Energy           Binding E       Cnvgnce     Time   Iter
+Ef        -1314.218342Ha        -2.4288185Ha      1.34E-02     1.4m      1
+Ef        -1314.219176Ha        -2.4296524Ha      1.12E-02     1.4m      2
+Ef        -1314.218864Ha        -2.4293406Ha      9.04E-03     1.4m      3
+Ef        -1314.218825Ha        -2.4293011Ha      6.19E-03     1.5m      4
+Ef        -1314.218781Ha        -2.4292572Ha      3.30E-04     1.5m      5
+Ef        -1314.218771Ha        -2.4292475Ha      1.75E-04     1.6m      6
+Ef        -1314.218774Ha        -2.4292501Ha      3.36E-05     1.6m      7
+Ef        -1314.218773Ha        -2.4292497Ha      4.68E-06     1.7m      8
+Message: SCF converged
+
+
+Fermi Energy:           -0.176828 Ha     -4.812 eV 
+ 
+ within the k-points mesh accuracy this solid is an insulator or semiconductor
+DFT energy gap:          0.240996 Ha      6.558 eV   indirect (upper limit from sampling with scf k-mesh)
+valence band edge:      -0.297326 Ha     -8.091 eV
+       located at:         0.333  0.000 -0.250  in fractional units of recip
+conduction band edge:   -0.056330 Ha     -1.533 eV
+          located at:      0.000  0.000  0.250
+
+df              ATOMIC  COORDINATES (au)                  DERIVATIVES (au)
+df            x          y          z            x          y          z
+df    O     2.557126   2.208939  -2.247328     0.000240  -0.000202  -0.000270
+df    O    -3.191560   1.110067   4.562237     0.000055   0.000308  -0.000270
+df    O     0.634434  -3.319006   1.157455    -0.000295  -0.000106  -0.000270
+df    O     0.634434   3.319006   2.247328    -0.000295   0.000106   0.000270
+df    O     2.557126  -2.208939  -4.562237     0.000240   0.000202   0.000270
+df    O    -3.191560  -1.110067  -1.157455     0.000055  -0.000308   0.000270
+df   Si     4.324894   0.000000  -3.404783    -0.000561  -0.000000   0.000000
+df   Si    -2.162447   3.745468   3.404783     0.000280  -0.000486  -0.000000
+df   Si    -2.162447  -3.745468   0.000000     0.000280   0.000486  -0.000000
+df  binding energy      -2.4292496Ha       -66.10327eV       -1524.408kcal/mol
+
+
+Energy components:
+   Sum of atomic energies =    -1311.7895237Ha
+                  Kinetic =       -5.3013943Ha
+            Electrostatic =        1.5071965Ha
+     Exchange-correlation =        0.9186969Ha
+        Spin polarization =        0.4462512Ha
+       Jellium correction =        0.0017599Ha
+
+            Total Energy           Binding E                   Time   Iter
+Ef        -1314.218773Ha        -2.4292496Ha                   1.8m      9
+ 
+ Evaluating last optimization step: 
+ Predicted energy change =  -0.000308 Ha
+    Actual energy change =  -0.000163 Ha
+ 
+
+** GEOMETRY OPTIMIZATION IN DELOCALIZED COORDINATES **
+
+   Searching for a Minimum
+
+                              Input Coordinates (Angstroms)
+          ----------------------------------------------------------------------
+               ATOM               X                   Y                   Z
+            1    O             1.353173            1.168920            4.215965
+            2    O             3.224499            0.587422            2.414232
+            3    O             2.792428            2.498787            0.612499
+            4    O             0.335728            1.756342            1.189235
+            5    O            -1.103527            3.086209            2.990968
+            6    O             0.767799            3.667707            4.792701
+            7    Si            2.288636            0.000000            3.603467
+            8    Si           -1.144318            1.982017            1.801733
+            9    Si            1.312382            2.273113            0.000000
+          ----------------------------------------------------------------------
+
+ Hessian Updated using BFGS Update
+ Geometry optimization: predicted energy change is -0.139E-05 Ha
+
+ New Cartesian Coordinates Obtained by Inverse Iteration
+ Norm of Displacement of Delocalized Coordinates:   0.003224
+ Norm of Displacement of Cartesian Coordinates:     0.005807
+
+       Cycle    Total Energy      Energy change   Max Gradient   Max Displacement
+opt==    3        -1314.2187733     -0.0001629        0.000561       0.001663
+
+ 
+                      Step    3                                       <-- DELOC
+                                                                      <-- DELOC
+ +-----------+-----------------+-----------------+------------+-----+ <-- DELOC
+ | Parameter |      value      |    tolerance    |    units   | OK? | <-- DELOC
+ +-----------+-----------------+-----------------+------------+-----+ <-- DELOC
+ |  delta E  |   -0.162942E-03 |    0.200000E-04 |      Ha    | No  | <-- DELOC
+ |  |F|max   |    0.560642E-03 |    0.211671E-02 |      au    | Yes | <-- DELOC
+ |  |dR|max  |    0.166333E-02 |    0.944863E-02 |      au    | Yes | <-- DELOC
+ +-----------+-----------------+-----------------+------------+-----+ <-- DELOC
+ 
+
+            Total Energy           Binding E       Cnvgnce     Time   Iter
+Ef        -1314.218774Ha        -2.4292501Ha      1.13E-02     1.9m      1
+Ef        -1314.219081Ha        -2.4295576Ha      1.02E-02     2.0m      2
+Ef        -1314.219051Ha        -2.4295270Ha      4.95E-03     2.0m      3
+Ef        -1314.218762Ha        -2.4292388Ha      4.53E-03     2.1m      4
+Ef        -1314.218752Ha        -2.4292283Ha      1.70E-03     2.1m      5
+Ef        -1314.218755Ha        -2.4292315Ha      1.31E-03     2.2m      6
+Ef        -1314.218778Ha        -2.4292546Ha      4.20E-05     2.2m      7
+Ef        -1314.218777Ha        -2.4292529Ha      1.82E-06     2.3m      8
+Message: SCF converged
+
+
+Fermi Energy:           -0.176817 Ha     -4.811 eV 
+ 
+ within the k-points mesh accuracy this solid is an insulator or semiconductor
+DFT energy gap:          0.241008 Ha      6.558 eV   indirect (upper limit from sampling with scf k-mesh)
+valence band edge:      -0.297321 Ha     -8.091 eV
+       located at:         0.333  0.000 -0.250  in fractional units of recip
+conduction band edge:   -0.056313 Ha     -1.532 eV
+          located at:      0.000  0.000  0.250
+
+df              ATOMIC  COORDINATES (au)                  DERIVATIVES (au)
+df            x          y          z            x          y          z
+df    O     2.556864   2.207276  -2.245927     0.000135  -0.000118  -0.000120
+df    O    -3.189989   1.110671   4.563639     0.000035   0.000176  -0.000120
+df    O     0.633125  -3.317947   1.158856    -0.000170  -0.000058  -0.000120
+df    O     0.633125   3.317947   2.245927    -0.000170   0.000058   0.000120
+df    O     2.556864  -2.207276  -4.563639     0.000135   0.000118   0.000120
+df    O    -3.189989  -1.110671  -1.158856     0.000035  -0.000176   0.000120
+df   Si     4.326176   0.000000  -3.404783    -0.000300  -0.000000  -0.000000
+df   Si    -2.163088   3.746578   3.404783     0.000150  -0.000260  -0.000000
+df   Si    -2.163088  -3.746578   0.000000     0.000150   0.000260  -0.000000
+df  binding energy      -2.4292529Ha       -66.10336eV       -1524.410kcal/mol
+
+
+Energy components:
+   Sum of atomic energies =    -1311.7895237Ha
+                  Kinetic =       -5.3007917Ha
+            Electrostatic =        1.5064038Ha
+     Exchange-correlation =        0.9188838Ha
+        Spin polarization =        0.4462512Ha
+       Jellium correction =        0.0017609Ha
+
+            Total Energy           Binding E                   Time   Iter
+Ef        -1314.218777Ha        -2.4292529Ha                   2.4m      9
+ 
+ Evaluating last optimization step: 
+ Predicted energy change = -0.139E-05 Ha
+    Actual energy change = -0.327E-05 Ha
+ 
+
+** GEOMETRY OPTIMIZATION IN DELOCALIZED COORDINATES **
+
+   Searching for a Minimum
+
+                              Input Coordinates (Angstroms)
+          ----------------------------------------------------------------------
+               ATOM               X                   Y                   Z
+            1    O             1.353034            1.168040            4.216707
+            2    O             3.225331            0.587742            2.414973
+            3    O             2.791735            2.499347            0.613240
+            4    O             0.335035            1.755782            1.188493
+            5    O            -1.103666            3.087089            2.990227
+            6    O             0.768631            3.667387            4.791960
+            7    Si            2.289314            0.000000            3.603467
+            8    Si           -1.144657            1.982604            1.801733
+            9    Si            1.312043            2.272525            0.000000
+          ----------------------------------------------------------------------
+
+ Hessian Updated using BFGS Update
+ Geometry optimization: predicted energy change is -0.549E-06 Ha
+
+ New Cartesian Coordinates Obtained by Inverse Iteration
+ Norm of Displacement of Delocalized Coordinates:   0.002726
+ Norm of Displacement of Cartesian Coordinates:     0.003545
+
+       Cycle    Total Energy      Energy change   Max Gradient   Max Displacement
+opt==    4        -1314.2187766     -0.0000033        0.000300       0.001106
+
+ 
+                      Step    4                                       <-- DELOC
+                                                                      <-- DELOC
+ +-----------+-----------------+-----------------+------------+-----+ <-- DELOC
+ | Parameter |      value      |    tolerance    |    units   | OK? | <-- DELOC
+ +-----------+-----------------+-----------------+------------+-----+ <-- DELOC
+ |  delta E  |   -0.326592E-05 |    0.200000E-04 |      Ha    | Yes | <-- DELOC
+ |  |F|max   |    0.300240E-03 |    0.211671E-02 |      au    | Yes | <-- DELOC
+ |  |dR|max  |    0.110583E-02 |    0.944863E-02 |      au    | Yes | <-- DELOC
+ +-----------+-----------------+-----------------+------------+-----+ <-- DELOC
+ 
+  Geometry optimization completed successfully in    4 steps.
+
+
+                              Final Coordinates (Angstroms)
+          ----------------------------------------------------------------------
+               ATOM               X                   Y                   Z
+            1    O             1.353034            1.168040            4.216707
+            2    O             3.225331            0.587742            2.414973
+            3    O             2.791735            2.499347            0.613240
+            4    O             0.335035            1.755782            1.188493
+            5    O            -1.103666            3.087089            2.990227
+            6    O             0.768631            3.667387            4.791960
+            7    Si            2.289314            0.000000            3.603467
+            8    Si           -1.144657            1.982604            1.801733
+            9    Si            1.312043            2.272525            0.000000
+          ----------------------------------------------------------------------
+
+
+ +++ Entering Properties Section +++ 
+
+Message: License checkin of MS_dmol successful
+Message: License checkin of MS_dsolid successful
+
+Message: DMol3 job finished successfully
+
+ time all done       2.45m      146.79s
+
+DMol3.pl message: DMol3 job finished in 0 hr 2 min 31 sec.

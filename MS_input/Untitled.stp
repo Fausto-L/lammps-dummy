@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project>
+  <Version>20.1</Version>
+  <Reference>{B3AA95FE-E9DC-4B78-B784-8F1C9C6B73CE}</Reference>
+  <DocumentManager>
+    <Document>
+      <ID>{E8AC1101-2A45-4FB8-8AF6-C326D2BF863B}</ID>
+      <Paths>1</Paths>
+      <URL>.\SiO2.xsd</URL>
+    </Document>
+    <Document>
+      <ID>{68674B47-2E06-4EDA-AC8D-279E476C8D5F}</ID>
+      <Paths>1</Paths>
+      <URL>.\SiO2 2.xsd</URL>
+    </Document>
+    <Document>
+      <ID>{8C242F96-D6DD-4EB1-B798-94AAEFDF20B6}</ID>
+      <Paths>1</Paths>
+      <URL>.\SiO2 DMol3 GeomOpt\SiO2 Convergence.xcd</URL>
+    </Document>
+    <Document>
+      <ID>{69E9AF23-C933-48FD-B62F-57BCAD0AD378}</ID>
+      <Paths>1</Paths>
+      <URL>.\SiO2 DMol3 GeomOpt\SiO2 Energies.xcd</URL>
+    </Document>
+    <Document>
+      <ID>{8A324EE5-93F5-4E39-AC5B-6CEFFED4C9F3}</ID>
+      <Paths>1</Paths>
+      <URL>.\SiO2 DMol3 GeomOpt\SiO2.input</URL>
+    </Document>
+    <Document>
+      <ID>{6AAAAA62-14C8-4334-9E35-DE8A585AFA9D}</ID>
+      <Paths>1</Paths>
+      <URL>.\SiO2 DMol3 GeomOpt\SiO2.outmol</URL>
+    </Document>
+    <Document>
+      <ID>{1FF6393A-40B4-4BA8-9FE5-AF76F30F9611}</ID>
+      <Paths>1</Paths>
+      <URL>.\SiO2 DMol3 GeomOpt\SiO2.xsd</URL>
+    </Document>
+    <Document>
+      <ID>{C82C0CC3-69C3-4D53-9F5F-8693C12FBD19}</ID>
+      <Paths>1</Paths>
+      <URL>.\SiO2 DMol3 GeomOpt\SiO2.xtd</URL>
+    </Document>
+    <Document>
+      <ID>{2B142B3F-2001-4CB7-8F2B-67D0E6EB59B7}</ID>
+      <Paths>1</Paths>
+      <URL>.\SiO2 DMol3 GeomOpt\SMDMol3_Extension_SiO2.xms</URL>
+    </Document>
+    <Document>
+      <ID>{3BFDAABE-D627-4FA2-9D86-A1916A17B9C7}</ID>
+      <Paths>1</Paths>
+      <URL>.\SiO2 DMol3 GeomOpt\Status.txt</URL>
+    </Document>
+    <Document>
+      <ID>{1E1F4B4E-7CE8-4EE3-9DC1-37C90A888148}</ID>
+      <Paths>1</Paths>
+      <URL>.\SiO2 DMol3 GeomOpt\Nanocluster.xsd</URL>
+    </Document>
+  </DocumentManager>
+  <ViewRegistry>
+    <Frame>
+      <Active>false</Active>
+      <Left>0</Left>
+      <Top>0</Top>
+      <Width>1195</Width>
+      <Height>1274</Height>
+      <Maximized>false</Maximized>
+      <Minimized>false</Minimized>
+      <View>
+        <Active>true</Active>
+        <DocumentID>{E8AC1101-2A45-4FB8-8AF6-C326D2BF863B}</DocumentID>
+        <Type>SVViewer3D.Viewer3DControl</Type>
+      </View>
+    </Frame>
+    <Frame>
+      <Active>false</Active>
+      <Left>1196</Left>
+      <Top>0</Top>
+      <Width>1196</Width>
+      <Height>1274</Height>
+      <Maximized>false</Maximized>
+      <Minimized>false</Minimized>
+      <View>
+        <Active>true</Active>
+        <DocumentID>{68674B47-2E06-4EDA-AC8D-279E476C8D5F}</DocumentID>
+        <Type>SVViewer3D.Viewer3DControl</Type>
+      </View>
+    </Frame>
+    <Frame>
+      <Active>true</Active>
+      <Left>13</Left>
+      <Top>28</Top>
+      <Width>1349</Width>
+      <Height>593</Height>
+      <Maximized>false</Maximized>
+      <Minimized>false</Minimized>
+      <View>
+        <Active>true</Active>
+        <DocumentID>{1E1F4B4E-7CE8-4EE3-9DC1-37C90A888148}</DocumentID>
+        <Type>SVViewer3D.Viewer3DControl</Type>
+      </View>
+    </Frame>
+  </ViewRegistry>
+  <DocumentEventManager>
+  </DocumentEventManager>
+</Project>

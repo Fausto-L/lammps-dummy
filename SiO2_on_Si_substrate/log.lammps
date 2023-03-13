@@ -1,0 +1,64 @@
+LAMMPS (8 Feb 2023)
+OMP_NUM_THREADS environment is not set. Defaulting to 1 thread. (src/comm.cpp:98)
+  using 1 OpenMP thread(s) per MPI task
+Loaded 1 plugins from D:\LAMMPS 64-bit 8Feb2023\plugins
+# Simulation of SiO2 on Si
+# Variables
+variable            tstp equal 0.001    # timestep 1fs=0.001ps
+variable            relaxstep equal 50000   # 弛豫时间,50ps
+variable            relaxtemp equal 300 # 弛豫温度K
+variable            relaxdump equal 2000    # 弛豫可视化文件输出频率
+
+variable            deep equal 18   # 插入深度A，记得加上间距10+8
+variable            vz equal -0.1   # 表示0.1A/Ps，插入速度,千万要能被整除
+variable            runpin equal abs(${deep}/${vz}/${tstp})     # 表示插入18A
+variable            runpin equal abs(18/${vz}/${tstp})     
+variable            runpin equal abs(18/-0.1/${tstp})     
+variable            runpin equal abs(18/-0.1/0.001)     
+variable            dis equal 1000  #运行距离
+variable            vx equal 0.1    #表示0.1A/Ps，运行速度
+variable            runpin2 equal abs(${dis}/${vx}/${tstp})     #继续运行
+variable            runpin2 equal abs(1000/${vx}/${tstp})     
+variable            runpin2 equal abs(1000/0.1/${tstp})     
+variable            runpin2 equal abs(1000/0.1/0.001)     
+
+# parameters
+units metal
+dimension	2
+boundary	p p p
+atom_style	atomic
+
+neighbor	0.3 bin         #?邻近原子列表参数
+neigh_modify	delay 5     #?模拟开始后延迟5个补偿再重建邻居列表
+
+read_data nanocluster.data  #SiO2 sphere
+Reading data file ...
+  orthogonal box = (-21.897 -20.808 -22.263) to (17.642 18.573 16.858)
+  1 by 1 by 1 MPI processor grid
+  reading atoms ...
+  2688 atoms
+  read_data CPU = 0.005 seconds
+
+# force field
+pair_style tersoff
+#pair_coeff * * SiO.1997.vashishta Si O
+
+
+#固定层、恒温层和牛顿层设定
+region         bot block INF INF INF INF INF 5
+group          bot region bot
+2087 atoms in group bot
+region         mid block INF INF INF INF 5 30
+group          mid region mid
+601 atoms in group mid
+region         up block INF INF INF INF 30 60
+group          up region up
+0 atoms in group up
+region         all union 3 bot mid up
+group          all region all
+2688 atoms in group all
+
+# abrasive particle
+region ball sphere
+ERROR: Illegal region command: missing argument(s) (src/region.cpp:305)
+Last command: region ball sphere

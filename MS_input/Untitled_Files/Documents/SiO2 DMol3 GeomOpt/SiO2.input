@@ -1,0 +1,33 @@
+
+# Task parameters
+Calculate                     optimize
+Opt_energy_convergence        2.0000e-05
+Opt_gradient_convergence      4.0000e-03 A
+Opt_displacement_convergence  5.0000e-03 A
+Opt_iterations                50
+Opt_max_displacement          0.3000 A
+Symmetry                      on
+Max_memory                    2048
+File_usage                    smart
+Scf_density_convergence       1.000000e-05
+Scf_charge_mixing             2.000000e-01
+Scf_diis                      6 pulay
+Scf_iterations                50
+
+# Electronic parameters
+Spin_polarization             restricted
+Charge                        0
+Basis                         dnd
+Pseudopotential               none
+Functional                    pwc
+Harris                        off
+Aux_density                   hexadecapole
+Integration_grid              medium
+Occupation                    fermi
+Cutoff_Global                 4.0000 angstrom
+
+# Kpoint definition file (intervals/offset): 
+Kpoints                       file     3 3 2 0.0000 0.0000 0.0000
+SiO2.kpoints
+
+# Calculated properties

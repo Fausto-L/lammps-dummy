@@ -1,0 +1,17 @@
+====================================================
+                  DMol3 Run Status                  
+====================================================
+ 
+Job Name            :        SiO2
+Task                :        Property
+Basis               :        dnd                 
+Atom_Rcut           :        4.000 Angstrom
+Functional          :        pwc                 
+Harris              :        off  
+Integration Grid    :        medium              
+Kpoints             :        SiO2.kpoints
+Occupation          :        fermi     
+Pseudopotential     :        none                
+Property            :        none                
+ 
+====================================================

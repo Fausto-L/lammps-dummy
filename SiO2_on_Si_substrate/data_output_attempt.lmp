@@ -1,0 +1,41 @@
+units metal
+dimension 3
+atom_style atomic
+boundary p p p      # 设置边界条件为周期性
+
+# 创建单晶硅(100)晶格，常数为5.431 angstroms
+lattice diamond 5.431 orient x 1 0 0 orient y 0 1 0 orient z 0 0 1
+
+
+
+# 创建一个120x60x10的区域，填充上述晶格
+region box block 0 120 0 60 0 10 units lattice
+create_box 4 box
+
+# 设置原子质量为28.0855 
+mass 1 28.0855
+mass 2 28.0855
+mass 3 28.0855
+mass 4 15.9994
+
+#固定层、恒温层和牛顿层设定
+region         bot block INF INF INF INF INF 5
+group          bot region bot
+region         mid block INF INF INF INF 5 30
+group          mid region mid
+region         up block INF INF INF INF 30 60
+group          up region up
+region         all union 3 bot mid up
+group          all region all
+
+
+create_atoms 1 box
+
+
+
+# 创建Stillinger-Weber势函数
+pair_style sw
+pair_coeff * * Si.sw Si
+
+# 输出数据文件
+write_data data.silicon_100

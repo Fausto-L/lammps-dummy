@@ -1,0 +1,137 @@
+################模拟#########################
+#变量设置
+variable            tstp equal 0.001#模拟步长1fs=0.001ps
+variable            relaxstep equal 50000#弛豫时间,50ps
+variable            relaxtemp equal 300#弛豫温度K
+variable            relaxdump equal 2000#弛豫可视化文件输出频率
+
+variable            deep equal 18#插入深度A，记得加上间距10+8
+variable            vz equal -0.1#表示0.1A/Ps，插入速度,千万要能被整除
+variable            runpin equal abs(${deep}/${vz}/${tstp})#表示插入18A
+variable            dis equal 1000#运行距离
+variable            vx equal 0.1#表示0.1A/Ps，运行速度
+variable            runpin2 equal abs(${dis}/${vx}/${tstp})#继续运行
+
+#in文件基本参数设置
+units      metal
+boundary    p p p
+atom_style    atomic
+timestep            ${tstp}  #?tstp的含义和作用
+
+read_data com.data
+
+#力场
+pair_style hybrid morse 7.5 lj/cut 7.5 eam meam
+pair_coeff 1 1 eam Ni_u3.eam #Ni NULL NULL NULL
+pair_coeff * * meam library.meam.txt P P.meam.txt NULL P NULL NULL
+pair_coeff 1 2 morse 0.52040             1.39950             2.89950
+pair_coeff 1 3 lj/cut 0.003367 3.1756  #Ni-Si
+pair_coeff 1 4 lj/cut 0.0013009 2.8214 #Ni-O
+pair_coeff 2 3 lj/cut 0.01518 3.76048  #P-Si
+pair_coeff 2 4 lj/cut 0.005866 3.4063  #P-O
+pair_coeff 3 3 none
+pair_coeff 3 4 none
+pair_coeff 4 4 none
+
+
+#固定层、恒温层和牛顿层设定
+region         bot block INF INF INF INF INF 5
+group          bot region bot
+region         mid block INF INF INF INF 5 30
+group          mid region mid
+region         up block INF INF INF INF 30 40.5
+group          up region up
+region          allmetal union 3 bot mid up
+group          allmetal region allmetal
+
+#球区域
+region         ball block INF INF INF INF 40.5 INF
+group          ball region ball
+group          mobile subtract all bot ball
+
+#region         ball2 sphere 15 30 55.8 5 units box
+#group          ball2 region ball2
+
+# 输出控制
+#thermo_style        custom step temp pe ke press vol
+#thermo              ${relaxdump}
+#compute       1 ball group/group allmetal
+#variable 	 dx equal xcm(ball,x)
+#variable 	 dy equal xcm(ball,y)
+#variable	  dz equal xcm(ball,z)
+#thermo              ${relaxdump}
+#thermo_style   custom step  c_1 c_1[1] c_1[2] c_1[3] v_dx v_dy v_dz
+variable	 fxx equal fcm(ball,x)
+variable 	 fyy equal fcm(ball,y)
+variable	 fzz equal fcm(ball,z)
+variable 	 dx equal xcm(ball,x)
+variable 	 dy equal xcm(ball,y)
+variable	  dz equal xcm(ball,z)
+#ji suan shineng
+compute    mype all pe/atom
+#compute    1 up reduce sum c_mype
+#compute    2 mid reduce sum c_mype
+compute      1 allmetal reduce sum c_mype
+#jisuan wendu
+compute       ke all ke/atom
+variable         kb equal 8.625e-5
+variable         mytemp atom c_ke/1.5/${kb}
+compute       2 up reduce sum v_mytemp
+thermo              ${relaxdump}
+thermo_style   custom step v_fxx v_fyy v_fzz v_dx v_dy v_dz c_1 c_2
+#thermo_style   custom step v_fxx v_fyy v_fzz v_dx v_dy v_dz c_1 c_2
+
+#minimize
+min_style	          cg
+minimize            0.0 1.0e-8 1000 100000
+
+#固定基底
+velocity               bot set 0.0 0.0 0.0
+fix                       bot bot setforce 0.0 0.0 0.0 #固定边界原子
+
+# initialize
+velocity            mobile create ${relaxtemp} 28459 rot yes dist gaussian mom yes
+reset_timestep      0
+
+#弛豫 
+dump                1  all xyz ${relaxdump} relaxout.xyz
+fix                 1 mobile nvt temp ${relaxtemp} ${relaxtemp} 0.1 #aniso 0 0 1
+run                ${relaxstep}
+#unfix               1
+undump               1
+write_data  npt.data
+
+########################摩擦开始########################
+
+#恒温层控温
+#fix                 mid mid nvt temp ${relaxtemp} ${relaxtemp} 0.1
+
+#牛顿层
+#fix                 up up nve
+#run             ${runpin}
+
+
+#输出
+dump            1 all custom ${relaxdump} fiction.xyz id type x y z fx  fy fz
+
+#先下降到指定深度
+fix             move_s ball move linear 0.0 0.0 ${vz} units box
+run             ${runpin}
+unfix move_s
+write_data  move_s.data
+#开始摩擦
+fix             move_s ball move linear ${vx} 0.0 0.0 units box
+run             ${runpin2}
+write_data  move_s2.data
+
+
+
+
+
+
+
+
+
+
+
+
